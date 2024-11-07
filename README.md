@@ -12,7 +12,7 @@ Sistema de gerenciamento para barbearias construído com Next.js, Prisma, Node.j
 
 ## Instalação
 
-1. Clone o repositório: `git clone (link unavailable)
+1. Clone o repositório: [`git clone](https://github.com/matheusnascimentosilva/barbershop_saas.git)
 2. Instale as dependências: npm install ou yarn install
 3. Configure o banco de dados:
     - Crie um arquivo .env com a string de conexão do banco de dados: DATABASE_URL="mysql://root:@localhost:3306/barbearia_saas"
@@ -25,10 +25,10 @@ Abra http://localhost:3000/ no seu navegador para acessar o sistema.
 
 ## Recursos
 
-- Documentação Next.js: (link unavailable)
-- Documentação Prisma: (link unavailable)
-- Documentação Tailwind: (link unavailable)
+- Documentação Next.js: [(link)](https://nextjs.org/docs)
+- Documentação Prisma: [(link)](https://www.prisma.io/docs)
+- Documentação Tailwind: [(link)](https://v2.tailwindcss.com/docs)
 
 ## Deploy
 
-O sistema pode ser deployado na plataforma Vercel: (link unavailable)
+O sistema pode ser deployado na plataforma Vercel [(link)](https://vercel.com/).
