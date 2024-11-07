@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Barbearia SaaS
 
-First, run the development server:
+Sistema de gerenciamento para barbearias construído com Next.js, Prisma, Node.js e Tailwind.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologias utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next.js: Framework para construir aplicações web reativas
+- Prisma: ORM para gerenciamento de banco de dados
+- Node.js: Runtime para executar JavaScript no servidor
+- Tailwind: Framework CSS para estilização
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Instalação
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone o repositório: `git clone (link unavailable)
+2. Instale as dependências: npm install ou yarn install
+3. Configure o banco de dados:
+    - Crie um arquivo .env com a string de conexão do banco de dados: DATABASE_URL="mysql://root:@localhost:3306/barbearia_saas"
+    - Execute as migrações Prisma: npx prisma migrate deploy
+4. Inicie o servidor de desenvolvimento: npm run dev ou yarn dev
 
-## Learn More
+## Acessando o sistema
 
-To learn more about Next.js, take a look at the following resources:
+Abra http://localhost:3000/ no seu navegador para acessar o sistema.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Recursos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Documentação Next.js: (link unavailable)
+- Documentação Prisma: (link unavailable)
+- Documentação Tailwind: (link unavailable)
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O sistema pode ser deployado na plataforma Vercel: (link unavailable)
