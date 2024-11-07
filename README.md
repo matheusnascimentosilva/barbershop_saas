@@ -32,3 +32,9 @@ Abra http://localhost:3000/ no seu navegador para acessar o sistema.
 ## Deploy
 
 O sistema pode ser deployado na plataforma Vercel [(link)](https://vercel.com/).
+
+## Generate JWT Token
+
+Execute o seguinte comando para gerar um token JWT:
+
+node app/utils/generate-secret.js
