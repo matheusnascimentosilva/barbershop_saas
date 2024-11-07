@@ -1,0 +1,96 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: (link unavailable)
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: (link unavailable)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// tabela de usuários
+model User {
+  id        Int     @id @default(autoincrement())
+  name      String
+  email     String  @unique
+  password  String
+  role      String  @default("ADMIN")
+  companyId Int
+  company   Company? @relation(fields: [companyId], references: [id])
+  appointments Appointment[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+// tabela de empresas
+model Company {
+  id        Int      @id @default(autoincrement())
+  name      String
+  plan      Plan     @relation(fields: [planId], references: [id])
+  planId    Int
+  users     User[]
+  barbers   Barber[]
+  products  Product[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+// tabela de planos
+model Plan {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  price       Decimal
+  duration    Int
+  features    String?
+  companies   Company[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+// tabela de barbeiros
+model Barber {
+  id        Int     @id @default(autoincrement())
+  name      String
+  email     String  @unique
+  phone     String?
+  services  String?
+  appointments Appointment[]
+  companyId Int
+  company   Company @relation(fields: [companyId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+// tabela de agendamento
+model Appointment {
+  id        Int  @id @default(autoincrement())
+  userId    Int
+  user      User @relation(fields: [userId], references: [id])
+  barberId  Int
+  barber    Barber @relation(fields: [barberId], references: [id])
+  date      DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+// tabela de produtos
+model Product {
+  id        Int     @id @default(autoincrement())
+  name      String
+  description String?
+  price     Decimal
+  companyId Int
+  category  Category? @relation(fields: [categoryId], references: [id])
+  categoryId Int?
+  company   Company @relation(fields: [companyId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id        Int     @id @default(autoincrement())
+  name      String
+  products  Product[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
